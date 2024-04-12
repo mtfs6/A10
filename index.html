@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Example</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cookie Management</title>
 </head>
 <body>
-<h1>Cookies Management</h1>
-<button onclick="setCookie()">Set Cookie</button>
-<p id="cookie-value">Cookie Value: <span id="value"></span></p>
+
+<div>
+    User Name: Mohamed Saad
+    UCID: Mts6
+    <hr>
+    <div id="cookieInputContainer">
+        <label for="cookieInput">Enter Cookie Value:</label>
+        <input type="text" id="cookieInput">
+        <button onclick="setCookie()">Set Cookie</button>
+    </div>
+</div>
+
+<div>
+    <p>Current Cookie Value: <span id="value"></span></p>
+</div>
+
 <script src="script.js"></script>
-</body>
-</html>

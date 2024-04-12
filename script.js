@@ -1,6 +1,6 @@
 function setCookie() {
-    var cookieValue = "Hello, this is a cookie!";
-    document.cookie = "exampleCookie=" + cookieValue + "; expires=Fri, 31 Dec 2024 23:59:59 UTC; path=/";
+    var cookieValue = document.getElementById("cookieInput").value;
+    document.cookie = "exampleCookie=" + encodeURIComponent(cookieValue) + "; expires=Fri, 31 Dec 2024 23:59:59 UTC; path=/";
     document.getElementById("value").innerText = cookieValue;
 }
 
@@ -20,5 +20,13 @@ function getCookie() {
     return "";
 }
 
+function hideInputIfCookieSet() {
+    var cookieValue = getCookie();
+    if (cookieValue !== "") {
+        document.getElementById("cookieInputContainer").style.display = "none";
+    }
+}
+
 // Display cookie value on page load
 document.getElementById("value").innerText = getCookie();
+hideInputIfCookieSet();
